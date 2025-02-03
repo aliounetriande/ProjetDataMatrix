@@ -1,0 +1,7 @@
+{
+  "name": "AppTraca",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
