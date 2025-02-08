@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title size="large">creer Data matrix</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <div class="example-content">Listen now content</div>
+
+  <form (ngSubmit)="generateQRCode()">
+    <label for="gtin">GTIN:</label>
+    <input type="text" id="gtin" [(ngModel)]="produit.gtin"  name="gtin" required>
+    <label for="exp">Expiration:</label>
+    <input type="text" id="exp" [(ngModel)]="produit.exp" name="exp" required>
+    <button type="submit">Generer QR Code</button>
+  </form>
+  <div *ngIf="qrCodeData">
+     
+   <!-- <qrcode [qrdata]="qrCodeData" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>-->
+    <ejs-datamatrixgenerator style="display: block;"  #barcode id="barcode" width="200px" height="200px" [displayText] = 'displayText' mode="SVG" type="DataMatrix" [value]="qrCodeData"></ejs-datamatrixgenerator>
+    <a [href]="qrCodeDownloadLink" download="qrcode">Télecharger</a>
+  </div>
+
+  
+
+
+  <!-- Afficher le lien de téléchargement -->
+  <div *ngIf="qrCodeDownloadLink">
+    <a [href]="qrCodeDownloadLink" download="qr-code.png">Cliquez pour télécharger le QR Code (PNG)</a>
+  </div>
+
+  
+
+  
+</ion-content>
