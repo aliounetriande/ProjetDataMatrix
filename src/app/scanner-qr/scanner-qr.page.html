@@ -1,9 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title size="large">scanner Data matrix</ion-title>
+    <ion-title>scanner</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="example-content">Scannez ici</div>
+<ion-button (click)="scanBarcode()">Scanner</ion-button>
+<ion-toast [isOpen]="isToast" [message]="taostData?.message" [position]="'bottom'" [color]="taostData?.color" [duration]="5000" (didDismiss)="isToast = false"></ion-toast>
+
 </ion-content>

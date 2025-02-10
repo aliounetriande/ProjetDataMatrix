@@ -6,6 +6,11 @@ export const routes: Routes = [
     path: '',
     component: ExampleComponent,
     children: [
+
+      {
+        path: 'home',
+        loadComponent: () => import('./home/home.page').then( m => m.HomePage)
+      },
       
       {
         path: 'creer-qr',

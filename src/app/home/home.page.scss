@@ -11,6 +11,7 @@
 #container strong {
   font-size: 20px;
   line-height: 26px;
+
 }
 
 #container p {
@@ -24,4 +25,16 @@
 
 #container a {
   text-decoration: none;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 15px;
+}
+
+.login-button {
+  margin-top: 0px;
+  --border-radius: 5px;
+  height: 40px;
 }
